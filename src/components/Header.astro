@@ -1,0 +1,26 @@
+---
+import MobileNav from './MobileNav.tsx';
+import { nav } from './nav';
+
+const { path } = Astro.props;
+const active = (h: string) => (h === '/' ? path === '/' : path.startsWith(h));
+---
+<header class="sticky top-0 z-40 border-b border-slate-200/70 bg-white/85 backdrop-blur">
+  <div class="container-x flex h-16 items-center justify-between lg:h-20">
+    <a href="/" class="flex items-center gap-3" aria-label="Jason Martuscello home">
+      <span class="grid h-10 w-10 place-items-center rounded-xl bg-navy-950 text-lg font-extrabold text-brand-400">J</span>
+      <span class="text-lg font-extrabold tracking-tight text-navy-950">Jason Martuscello</span>
+    </a>
+    <nav class="hidden items-center gap-8 md:flex" aria-label="Main">
+      {nav.map((n) => (
+        <a
+          href={n.href}
+          aria-current={active(n.href) ? 'page' : undefined}
+          class:list={['text-sm font-semibold transition hover:text-brand-700', active(n.href) ? 'text-brand-700' : 'text-slate-600']}
+        >{n.label}</a>
+      ))}
+      <a href="/#subscribe" class="btn btn-primary !py-2.5">Subscribe</a>
+    </nav>
+    <MobileNav client:load items={nav} path={path} />
+  </div>
+</header>

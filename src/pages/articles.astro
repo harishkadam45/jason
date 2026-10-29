@@ -1,0 +1,21 @@
+---
+import Layout from '../layouts/Layout.astro';
+import ArticleCard from '../components/ArticleCard.astro';
+import { articles } from '../data/articles';
+---
+<Layout title="Articles" description="All articles by Jason Martuscello on behavioral economics, language strategy and behavior change.">
+  <section class="bg-brand-50 py-14 sm:py-20">
+    <div class="container-x">
+      <p class="eyebrow">Articles</p>
+      <h1 class="mt-3 text-4xl sm:text-5xl">Writing on how people decide and change</h1>
+    </div>
+  </section>
+  <section class="section">
+    <div class="container-x grid gap-6 md:grid-cols-2 lg:grid-cols-3">
+      {articles.map((a) => <ArticleCard a={a} />)}
+    </div>
+    <div class="container-x mt-10 text-center">
+      <a href="https://jasonmartuscello.com/archive/" class="btn btn-outline">View the full archive</a>
+    </div>
+  </section>
+</Layout>

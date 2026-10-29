@@ -1,0 +1,34 @@
+@import "tailwindcss";
+@import "@fontsource-variable/plus-jakarta-sans";
+
+@theme {
+  --font-sans: "Plus Jakarta Sans Variable", "Plus Jakarta Sans", ui-sans-serif, system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
+
+  --color-brand-50: #f4f9ff;
+  --color-brand-100: #e0f0ff;
+  --color-brand-200: #b9e0ff;
+  --color-brand-300: #86c9ff;
+  --color-brand-400: #4fadff;
+  --color-brand-500: #1e9cff;
+  --color-brand-600: #0095ff;
+  --color-brand-700: #0071cc;
+  --color-brand-800: #0066bb;
+  --color-navy-950: #0b132a;
+  --color-ice-blue: #f4f9ff;
+}
+
+@layer base {
+  html { scroll-behavior: smooth; }
+  body { @apply bg-white font-sans text-slate-600 antialiased; }
+  h1, h2, h3, h4 { @apply font-extrabold tracking-tight text-navy-950; }
+  :focus-visible { @apply outline-2 outline-offset-2 outline-brand-600; }
+}
+
+@layer components {
+  .container-x { @apply mx-auto w-full max-w-7xl px-5 sm:px-8 lg:px-10; }
+  .eyebrow { @apply text-sm font-bold uppercase tracking-widest text-brand-700; }
+  .btn { @apply inline-flex items-center justify-center gap-2 rounded-full px-6 py-3 text-sm font-semibold transition; }
+  .btn-primary { @apply bg-brand-600 text-white shadow-lg shadow-brand-600/25 hover:bg-brand-700; }
+  .btn-outline { @apply border border-slate-300 bg-white text-navy-950 hover:border-brand-600 hover:text-brand-700; }
+  .section { @apply py-16 sm:py-20 lg:py-24; }
+}

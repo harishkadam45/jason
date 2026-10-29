@@ -1,0 +1,57 @@
+---
+import Layout from '../layouts/Layout.astro';
+
+const talks = [
+  { t: 'Premiumization: The Key to Brand Growth', p: 'Why brands are turning to premiumization to get customers to pay more, and how leading brands use it to build competitive advantage and sustainable growth.' },
+  { t: 'Foundations in Applied Behavioral Science', p: 'Core principles and techniques for infusing behavioral science into research, with case examples from leading brands.' },
+  { t: 'The Power of Anticipation to Influence Consumer Behavior', p: 'Applying anticipation across the customer journey, and the concept of Triple Jeopardy: Anticipation › Experience › Memories.' },
+];
+const writing = [
+  'Watch Out for These 16 Mistakes with Measuring Behavior (and How to Fix Them)',
+  'Who Starts Starbucks ‘Pay-it-Forward’ Chain? Random Acts or Viral Marketing?',
+  'The Surprising New Science of Emotion',
+  'How to Measure and Manage Emotional Experiences',
+  'Peripheral Vision: Ad Testing Reflects Reality',
+  'The Power of Anticipation and its Influence in Consumer Behavior',
+  'Transform Your Brand Storytelling by Harnessing the Psychology of Meaning-Making',
+  'Strategic Guide to Applying Implicit Measurements',
+  'Is “System 1” & “System 2” Still Relevant for Consumer Insights?',
+  'Offloading Cognition: The New Behavioral Science Approach to Winning Customers',
+  '5 Tactics to Prepare for the NYC Marathon',
+];
+---
+<Layout title="Work" description="Featured presentations and writing at the intersection of business strategy and behavioral economics.">
+  <section class="bg-brand-50 py-14 sm:py-20">
+    <div class="container-x max-w-4xl">
+      <p class="eyebrow">My Work</p>
+      <h1 class="mt-3 text-4xl sm:text-5xl">A cross between Michael Porter &amp; Daniel Kahneman</h1>
+      <p class="mt-5 text-lg leading-8">Blending the best of business strategy with behavioral economics research to help drive growth for leading companies. I conduct consumer and market research through a behavioral economics lens to understand how consumers make choices and how to change buying behavior.</p>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="container-x">
+      <p class="eyebrow">Featured Presentations</p>
+      <div class="mt-8 grid gap-6 md:grid-cols-3">
+        {talks.map((x) => (
+          <article class="rounded-2xl border border-slate-200 p-6 shadow-sm transition hover:border-brand-300 hover:shadow-lg">
+            <h3 class="text-xl">{x.t}</h3>
+            <p class="mt-3 leading-7">{x.p}</p>
+          </article>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <section class="section bg-ice-blue">
+    <div class="container-x">
+      <p class="eyebrow">Writing Showcase</p>
+      <ul class="mt-8 grid gap-3 md:grid-cols-2">
+        {writing.map((w) => (
+          <li class="rounded-xl border border-brand-100 bg-white px-5 py-4 font-semibold text-navy-950">{w}</li>
+        ))}
+      </ul>
+      <div class="mt-10 text-center"><a href="/articles" class="btn btn-primary">Read All My Articles</a></div>
+    </div>
+  </section>
+</Layout>
